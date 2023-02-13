@@ -45,7 +45,7 @@ If you want a publicly accessible demo site, [deploy to Heroku](#deploy-to-herok
 
 Set up a development environment and run this demo website with a single click (requires a Github account):
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/wagtail/bakerydemo/)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/wagtail/inark/)
 
 Once Gitpod has fully started, and a preview of the bakery website has appeared in the "Simple Browser" panel, click the arrow button to the right of the URL bar to open the website in a new tab.
 Go to `/admin/` and login with `admin / changeme`.
@@ -62,8 +62,8 @@ Go to `/admin/` and login with `admin / changeme`.
 Once you've installed the necessary dependencies run the following commands:
 
 ```bash
-git clone https://github.com/wagtail/bakerydemo.git
-cd bakerydemo
+git clone https://github.com/wagtail/inark.git
+cd inark
 vagrant up
 vagrant ssh
 # then, within the SSH session:
@@ -89,8 +89,8 @@ Use `Ctrl+c` to stop the local server. To stop the Vagrant environment, run `exi
 Run the following commands:
 
 ```bash
-git clone https://github.com/wagtail/bakerydemo.git
-cd bakerydemo
+git clone https://github.com/wagtail/inark.git
+cd inark
 docker compose up --build -d
 ```
 
@@ -135,28 +135,28 @@ You can run the Wagtail demo locally without setting up Vagrant or Docker and si
 With [PIP](https://github.com/pypa/pip) and [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
 installed, run:
 
-    mkvirtualenv wagtailbakerydemo
+    mkvirtualenv wagtailinark
     python --version
 
 Confirm that this is showing a compatible version of Python 3.x. If not, and you have multiple versions of Python installed on your system, you may need to specify the appropriate version when creating the virtualenv:
 
     deactivate
-    rmvirtualenv wagtailbakerydemo
-    mkvirtualenv wagtailbakerydemo --python=python3.9
+    rmvirtualenv wagtailinark
+    mkvirtualenv wagtailinark --python=python3.9
     python --version
 
 Now we're ready to set up the bakery demo project itself:
 
     cd ~/dev [or your preferred dev directory]
-    git clone https://github.com/wagtail/bakerydemo.git
-    cd bakerydemo
+    git clone https://github.com/wagtail/inark.git
+    cd inark
     pip install -r requirements/development.txt
 
 Next, we'll set up our local environment variables. We use [django-dotenv](https://github.com/jpadilla/django-dotenv)
 to help with this. It reads environment variables located in a file name `.env` in the top level directory of the project. The only variable we need to start is `DJANGO_SETTINGS_MODULE`:
 
-    cp bakerydemo/settings/local.py.example bakerydemo/settings/local.py
-    echo "DJANGO_SETTINGS_MODULE=bakerydemo.settings.local" > .env
+    cp inark/settings/local.py.example inark/settings/local.py
+    echo "DJANGO_SETTINGS_MODULE=inark.settings.local" > .env
 
 To set up your database and load initial data, run the following commands:
 
@@ -170,7 +170,7 @@ Log into the admin with the credentials `admin / changeme`.
 
 If you want a publicly accessible demo site, use [Heroku's](https://heroku.com) one-click deployment solution to the free 'Hobby' tier:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/wagtail/bakerydemo)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/wagtail/inark)
 
 If you do not have a Heroku account, clicking the above button will walk you through the steps
 to generate one. At this point you will be presented with a screen to configure your app. For our purposes,
@@ -219,20 +219,20 @@ Hopefully after you've experimented with the demo you'll want to create your own
 
 # Contributing
 
-If you're a Python or Django developer, fork the repo and get stuck in! If you'd like to get involved you may find our [contributing guidelines](https://github.com/wagtail/bakerydemo/blob/master/contributing.md) a useful read.
+If you're a Python or Django developer, fork the repo and get stuck in! If you'd like to get involved you may find our [contributing guidelines](https://github.com/wagtail/inark/blob/master/contributing.md) a useful read.
 
 ### Preparing this archive for distribution
 
 If you change content or images in this repo and need to prepare a new fixture file for export, do the following on a branch:
 
 ```bash
-./manage.py dumpdata --natural-foreign --indent 2 -e auth.permission -e contenttypes -e wagtailcore.GroupCollectionPermission -e wagtailcore.revision -e wagtailimages.rendition -e sessions -e wagtailsearch.indexentry -e wagtailsearch.sqliteftsindexentry -e wagtailcore.referenceindex -e wagtailcore.pagesubscription -e wagtailcore.modellogentry -e wagtailcore.pagelogentry > bakerydemo/base/fixtures/bakerydemo.json
-prettier --write bakerydemo/base/fixtures/bakerydemo.json
+./manage.py dumpdata --natural-foreign --indent 2 -e auth.permission -e contenttypes -e wagtailcore.GroupCollectionPermission -e wagtailcore.revision -e wagtailimages.rendition -e sessions -e wagtailsearch.indexentry -e wagtailsearch.sqliteftsindexentry -e wagtailcore.referenceindex -e wagtailcore.pagesubscription -e wagtailcore.modellogentry -e wagtailcore.pagelogentry > inark/base/fixtures/inark.json
+prettier --write inark/base/fixtures/inark.json
 ```
 
 Please optimize any included images to 1200px wide with JPEG compression at 60%. Note that `media/images` is ignored in the repo by `.gitignore` but `media/original_images` is not. Wagtail's local image "renditions" are excluded in the fixture recipe above.
 
-Make a pull request to https://github.com/wagtail/bakerydemo
+Make a pull request to https://github.com/wagtail/inark
 
 # Other notes
 

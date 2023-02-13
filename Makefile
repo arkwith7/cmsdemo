@@ -8,7 +8,7 @@ lint-server:
 	black --target-version py37 --check --diff .
 	flake8
 	isort --check-only --diff .
-	curlylint --parse-only bakerydemo
+	curlylint --parse-only inark
 	git ls-files '*.html' | xargs djhtml --check
 
 lint-client:

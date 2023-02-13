@@ -24,7 +24,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - media-root:/code/bakerydemo/media
+      - media-root:/code/inark/media
     links:
       - db:db
       - redis:redis

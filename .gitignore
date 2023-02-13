@@ -11,8 +11,8 @@
 /data
 .~*
 common/CACHE
-bakerydemo/settings/local.py
-bakerydemodb
+inark/settings/local.py
+inarkdb
 node_modules
 venv
 .venv
@@ -21,3 +21,4 @@ __pycache__
 /.vagrant/
 /Vagrantfile.local
 !.gitignore
+venv/
