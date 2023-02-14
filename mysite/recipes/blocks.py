@@ -13,7 +13,7 @@ from wagtail.contrib.typed_table_block.blocks import TypedTableBlock
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
 
-from inark.base.blocks import BlockQuote, HeadingBlock, ImageBlock
+from mysite.base.blocks import BlockQuote, HeadingBlock, ImageBlock
 
 
 class RecipeStepBlock(StructBlock):

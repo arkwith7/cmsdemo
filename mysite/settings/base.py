@@ -35,12 +35,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "inark.base",
-    "inark.blog",
-    "inark.breads",
-    "inark.locations",
-    "inark.recipes",
-    "inark.search",
+    "mysite.base",
+    "mysite.blog",
+    "mysite.breads",
+    "mysite.locations",
+    "mysite.recipes",
+    "mysite.search",
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -88,13 +88,13 @@ MIDDLEWARE = [
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
-ROOT_URLCONF = "inark.urls"
+ROOT_URLCONF = "mysite.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            "inark/templates",
+            "mysite/templates",
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -108,7 +108,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "inark.wsgi.application"
+WSGI_APPLICATION = "mysite.wsgi.application"
 
 
 # Database
@@ -117,7 +117,7 @@ WSGI_APPLICATION = "inark.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "inarkdb"),
+        "NAME": os.path.join(BASE_DIR, "mysitedb"),
     }
 }
 
@@ -168,6 +168,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(PROJECT_DIR, "collect_static")
+# STATIC_ROOT = os.path.join(PROJECT_DIR, "static")
 STATIC_URL = "/static/"
 
 MEDIA_ROOT = os.path.join(PROJECT_DIR, "media")
@@ -180,12 +181,12 @@ GOOGLE_MAP_API_KEY = "AIzaSyD31CT9P9KxvNUJOwDq2kcFEIG8ADgaFgw"
 WAGTAILSEARCH_BACKENDS = {
     "default": {
         "BACKEND": "wagtail.search.backends.database",
-        "INDEX": "inark",
+        "INDEX": "mysite",
     },
 }
 
 # Wagtail settings
-WAGTAIL_SITE_NAME = "inark"
+WAGTAIL_SITE_NAME = "mysite"
 
 WAGTAIL_I18N_ENABLED = True
 

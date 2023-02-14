@@ -5,8 +5,8 @@ from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Orderable, Page
 from wagtail.search import index
 
-from inark.base.blocks import BaseStreamBlock
-from inark.base.models import Person
+from mysite.base.blocks import BaseStreamBlock
+from mysite.base.models import Person
 
 from .blocks import RecipeStreamBlock
 

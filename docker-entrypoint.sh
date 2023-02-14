@@ -10,6 +10,7 @@ done
 
 if [ "$1" = '/venv/bin/uwsgi' ]; then
     /venv/bin/python manage.py migrate --noinput
+    /venv/bin/python manage.py collectstatic --noinput
 fi
 
 if [ "x$DJANGO_LOAD_INITIAL_DATA" = 'xon' ]; then

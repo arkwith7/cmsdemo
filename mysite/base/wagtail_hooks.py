@@ -5,8 +5,8 @@ from wagtail.contrib.modeladmin.options import (
     modeladmin_register,
 )
 
-from inark.base.models import FooterText, Person
-from inark.breads.models import BreadIngredient, BreadType, Country
+from mysite.base.models import FooterText, Person
+from mysite.breads.models import BreadIngredient, BreadType, Country
 
 """
 N.B. To see what icons are available for use in Wagtail menus and StreamField block types,

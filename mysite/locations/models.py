@@ -9,8 +9,8 @@ from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
 from wagtail.search import index
 
-from inark.base.blocks import BaseStreamBlock
-from inark.locations.choices import DAY_CHOICES
+from mysite.base.blocks import BaseStreamBlock
+from mysite.locations.choices import DAY_CHOICES
 
 
 class OperatingHours(models.Model):

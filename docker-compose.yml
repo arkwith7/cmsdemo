@@ -24,7 +24,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - media-root:/code/inark/media
+      - static_volume:/code/mysite/collect_static
+      - media_volume:/code/mysite/media/images
     links:
       - db:db
       - redis:redis
@@ -33,5 +34,19 @@ services:
     depends_on:
       - db
       - redis
+  nginx:
+    container_name: Nginx
+    build: ./nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - static_volume:/code/mysite/collect_static
+      - media_volume:/code/mysite/media/images
+    depends_on:
+      - app
+
 volumes:
-  media-root:
+  static_volume:
+  media_volume:

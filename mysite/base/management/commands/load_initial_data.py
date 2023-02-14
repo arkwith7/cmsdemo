@@ -24,7 +24,7 @@ class Command(BaseCommand):
 
     def handle(self, **options):
         fixtures_dir = os.path.join(settings.PROJECT_DIR, "base", "fixtures")
-        fixture_file = os.path.join(fixtures_dir, "inark.json")
+        fixture_file = os.path.join(fixtures_dir, "mysite.json")
 
         print("Copying media files to configured storage...")  # noqa: T201
         local_storage = FileSystemStorage(os.path.join(fixtures_dir, "media"))
@@ -42,5 +42,5 @@ class Command(BaseCommand):
         call_command("rebuild_references_index", verbosity=0)
 
         print(  # noqa: T201
-            "Awesome. Your data is loaded! The bakery's doors are almost ready to open..."
+            "Awesome. Your data is loaded! The mysite's doors are almost ready to open..."
         )

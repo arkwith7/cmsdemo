@@ -9,16 +9,16 @@ from wagtail.images.models import Image
 from wagtail.rich_text import RichText
 from willow.image import Image as WillowImage
 
-from inark.base.models import FooterText, HomePage, Person, StandardPage
-from inark.blog.models import BlogIndexPage, BlogPage
-from inark.breads.models import (
+from mysite.base.models import FooterText, HomePage, Person, StandardPage
+from mysite.blog.models import BlogIndexPage, BlogPage
+from mysite.breads.models import (
     BreadIngredient,
     BreadPage,
     BreadsIndexPage,
     BreadType,
     Country,
 )
-from inark.locations.models import LocationPage, LocationsIndexPage
+from mysite.locations.models import LocationPage, LocationsIndexPage
 
 FIXTURE_MEDIA_DIR = Path(settings.PROJECT_DIR) / "base/fixtures/media/original_images"
 

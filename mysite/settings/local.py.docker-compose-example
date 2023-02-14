@@ -1,4 +1,4 @@
-from inark.settings.dev import *   # noqa
+from mysite.settings.dev import *   # noqa
 import dj_database_url
 
 # Override settings here

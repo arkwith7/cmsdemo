@@ -11,8 +11,8 @@
 /data
 .~*
 common/CACHE
-inark/settings/local.py
-inarkdb
+mysite/settings/local.py
+mysitedb
 node_modules
 venv
 .venv
