@@ -29,8 +29,8 @@ services:
     links:
       - db:db
       - redis:redis
-    ports:
-      - '8000:8000'
+    # ports:
+    #   - '8000:8000'
     depends_on:
       - db
       - redis
@@ -39,7 +39,7 @@ services:
     build: ./nginx
     restart: unless-stopped
     ports:
-      - 80:80
+      - 8080:80
       - 443:443
     volumes:
       - static_volume:/code/mysite/collect_static
